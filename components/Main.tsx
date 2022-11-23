@@ -1,10 +1,10 @@
-import styles from '../styles/Home.module.css'
+import classes from './Main.module.css'
 import { Links } from "../components/Links"
 import { Headline } from '../components/Headline'
 
 export function  Main(props: { page: string }) {
   return (
-      <main className={styles.main}>
+      <main className={classes.main}>
         <Headline
           page={props.page}
           number={1111}
@@ -13,7 +13,7 @@ export function  Main(props: { page: string }) {
           boolean
           onClick={() => alert("クリック")}
         >
-        <code className={styles.code}>pages/{props.page}.tsx</code>
+        <code className={classes.code}>pages/{props.page}.tsx</code>
         </Headline>
         <Links/>
       </main>
