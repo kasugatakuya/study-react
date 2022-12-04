@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer"
 import { Main } from "../components/Main"
 import { Header } from '../components/Header'
 import { useCallback } from 'react'
+import Link from 'next/link'
 
 export default function Home() {
   const foo = 1;
@@ -19,12 +20,12 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header/>
-      <a
+      <Link
         href="/about"
         onClick={hendleClick}
       >
-          ボタン
-      </a>
+        ボタン
+      </Link>
       <Main page="index"/>
       <Footer/>
     </div>
