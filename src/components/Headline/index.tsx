@@ -1,7 +1,7 @@
 import classes from './Headline.module.css'
 import { ReactNode } from 'react'
 
-export function Headline(props: { page: string, number: number, array: number[], obj: object, boolean: boolean, onClick: ()=>void, children: ReactNode
+export function Headline(props: { page: string, number: number, array: number[], obj: object, boolean: boolean,  children: ReactNode
 }) {
   return (
     <div>
@@ -10,8 +10,6 @@ export function Headline(props: { page: string, number: number, array: number[],
       <p className={classes.description}>
         Get started by editing{props.children}
       </p>
-
-      <button onClick={props.onClick}>ボタン</button>
     </div>
   )
 }

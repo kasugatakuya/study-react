@@ -11,7 +11,6 @@ export function  Main(props: { page: string }) {
           array={[1, 2, 3]}
           obj={{ foo: "foo", bar: "bar" }}
           boolean
-          onClick={() => alert("クリック")}
         >
         <code className={classes.code}>pages/{props.page}.tsx</code>
         </Headline>
