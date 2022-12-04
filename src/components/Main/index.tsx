@@ -1,6 +1,6 @@
 import classes from './Main.module.css'
-import { Links } from "../components/Links"
-import { Headline } from '../components/Headline'
+import { Links } from "../Links"
+import { Headline } from '../Headline'
 
 export function  Main(props: { page: string }) {
   return (
@@ -15,7 +15,7 @@ export function  Main(props: { page: string }) {
         >
         <code className={classes.code}>pages/{props.page}.tsx</code>
         </Headline>
-        <Links/>
+        <Links />
       </main>
   )
 }
