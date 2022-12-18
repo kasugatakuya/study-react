@@ -3,22 +3,20 @@ import styles from '../styles/Home.module.css'
 import { Footer } from "../components/Footer"
 import { Main } from "../components/Main"
 import { Header } from '../components/Header'
-import { useCallback, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 export default function Home() {
-  const foo = 1;
-  const hendleClick = useCallback((e: any) => {
-    console.log(e.target.href);
-    e.preventDefault();
-    alert(foo);
-  }, []);
-  useEffect(() => {
-    console.log("マウント時")
-    document.body.style.backgroundColor = "lightblue";
+  const [count, setCount] = useState(1);
 
+
+  const hendleClick = () => {
+    setCount(count => count + 1);
+    setCount(count => count + 1);
+  };
+  useEffect(() => {
+    document.body.style.backgroundColor = "lightblue";
     return () => {
-      console.log("アンマウント時")
       document.body.style.backgroundColor = "";
     }
   }, [])
@@ -29,12 +27,10 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header/>
-      <Link
-        href="/about"
-        onClick={hendleClick}
-      >
+      <p>{count}</p>
+      <button onClick={hendleClick} >
         ボタン
-      </Link>
+      </button>
       <Main page="index"/>
       <Footer/>
     </div>
