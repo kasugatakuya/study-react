@@ -1,8 +1,8 @@
 import classes from './Headline.module.css'
 import { ReactNode } from 'react'
 
-export function Headline(props: { page: string, number: number, array: number[], obj: object, handleReduce: any, boolean: boolean,  children: ReactNode
-}) {
+export const Headline = (props: { page: string, number: number, array: number[], obj: object, handleReduce: any, boolean: boolean,  children: ReactNode
+}) => {
   return (
     <div>
       <h1 className={classes.title}>{props.page} page</h1>

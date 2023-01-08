@@ -1,6 +1,6 @@
 import { useCallback, useState, useMemo } from 'react'
 
-export function useCounter(): { count: number; doubleCount:number; isShow: boolean; hendleClick: () => void; handleDisplay: (e: any) => void; } {
+export const useCounter = (): { count: number; doubleCount:number; isShow: boolean; hendleClick: () => void; handleDisplay: (e: any) => void; } => {
   const [count, setCount] = useState<number>(1);
   const [isShow, setIsShow] = useState<boolean>(true);
 

@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 
 
-export function useInputArray(): { text: string; array: string[]; handleChange: (e: any) => void; handleAdd: (e: any) => void; } {
+export const useInputArray = (): { text: string; array: string[]; handleChange: (e: any) => void; handleAdd: (e: any) => void; } => {
   const [text, setText] = useState<string>('');
   const [array, setArray] = useState<string[]>([]);
 
@@ -15,6 +15,10 @@ export function useInputArray(): { text: string; array: string[]; handleChange: 
 
   const handleAdd = useCallback((e: any) => {
     setArray((prevArray: string[]) => {
+      if (prevArray.includes(text)) {
+        alert("同じ要素が既に存在します。");
+        return prevArray;
+      }
       return [...prevArray, text];
     });
   }, [text]);
